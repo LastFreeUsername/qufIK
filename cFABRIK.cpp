@@ -18,9 +18,10 @@ namespace cFABRIK
 		printf("constructor!");
 	}
 
-	double cFABRIK::test(double a, double b)
+	double cFABRIK::test(point* a, point* b)
 	{
-		return (a+b);
+		printf("test test");
+		return (a->x+b->x);
 	}
 
 }
