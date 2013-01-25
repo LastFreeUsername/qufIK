@@ -8,12 +8,14 @@
 #ifndef CFABRIK_H_
 #define CFABRIK_H_
 
+
 namespace cFABRIK
 {
 	class cFABRIK
 	{
 	public:
-		static double test(double a, double b);
+		__declspec(dllexport) __stdcall cFABRIK();
+		__declspec(dllexport) static double __stdcall test(double a, double b);
 	};
 
 }
