@@ -12,18 +12,25 @@ namespace cFABRIK
 {
 	typedef struct point
 	{
-		float x;
-		float y;
-		float z;
+		double x;
+		double y;
+		double z;
 	} point;
 
 	class cFABRIK
 	{
 	public:
+		__declspec(dllexport) __stdcall cFABRIK(point points[], int size);
 		__declspec(dllexport) __stdcall cFABRIK();
-		__declspec(dllexport) static double __stdcall test(point* a, point* b);
+		__declspec(dllexport) __stdcall ~cFABRIK();
+		__declspec(dllexport) point __stdcall makept(double x, double y, double z);
+		__declspec(dllexport) int __stdcall setpts(point points[], int size);
+		__declspec(dllexport) int __stdcall getpts(point** points);
+		__declspec(dllexport) int __stdcall iterate(point target);
+		__declspec(dllexport) double __stdcall ptdifflen(point pt1, point pt2);
 	private:
-		point pts;
+		point* pts;
+		int size;
 	};
 
 }
